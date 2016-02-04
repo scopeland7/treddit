@@ -1,0 +1,33 @@
+
+
+<p id="notice"><%= notice %></p>
+ 
+
+<h1>Listing Blog Posts</h1>
+<%= link_to 'New Blog post', new_blog_post_path, class: "btn btn-info" %>
+
+
+  <div class = "row" >
+    <% @blog_posts.each do |blog_post| %>
+      <div class = "well" style="background-color: rgb(139, 161, 98);">
+        <div class="col-md-1">
+        <p><span = "glyphycon glyphicon-arrow-up"> <br>
+            <%= 'need to count here'  %>
+            <span = "glyphcon glyphicon-arrow-down"> </p>
+
+
+      
+        <div class = "col-md-10">
+       
+
+          <p><strong><%= "#{blog_post.title}," %></strong> <em><%= "#{blog_post.user.email}" %> </em></p>
+
+        <p><%= blog_post.blog_entry[0..50] %>...</p>
+        <p><%= link_to 'Read more', blog_post, class: "btn btn-primary" %>
+        
+          <%= link_to 'Edit', edit_blog_post_path(blog_post), class: "btn btn-warning" %>
+        <%= link_to 'Destroy', blog_post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></p>
+        </div>
+      </div>  
+    <% end %>
+  </div>
