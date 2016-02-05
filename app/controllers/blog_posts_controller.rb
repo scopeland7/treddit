@@ -10,7 +10,6 @@ class BlogPostsController < ApplicationController
   # GET /blog_posts/1
   # GET /blog_posts/1.json
   def show
-    @blog_post = BlogPost.where(id: @blog_post.id)
   end
 
   # GET /blog_posts/new

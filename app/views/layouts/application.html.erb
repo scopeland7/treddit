@@ -12,18 +12,17 @@
     <%= csrf_meta_tags %>
 </head>
 <body>
-
     <nav class="navbar nav-tabs">
         <div class="container-fluid">
             <div class="navbar-header">
                 <%= link_to "Home Page", root_path, class: "navbar-brand" %>
             </div>
 
-<!--             <ul class="nav navbar-nav navbar-left">
+            <ul class="nav navbar-nav navbar-left">
                 <li>
-                    <%= link_to "Other Page", other_path %>
+                    <%= link_to "Other Page" %>
                 </li>
-            </ul> -->
+            </ul>
 
             <ul class="nav navbar-nav navbar-right">
                 <% if user_signed_in? %>
@@ -38,7 +37,9 @@
         </div>
     </nav>
 
+<div class='container'>
 	<%= yield %>
+</div>
 
 </body>
 </html>
