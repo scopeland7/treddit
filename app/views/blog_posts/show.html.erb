@@ -15,15 +15,17 @@
   <%= @blog_post.blog_entry %>
 </p>
 
-<p>
-  <strong>Blog post:</strong>
-  <%= @blog_post.blog_post_id %>
-</p>
 
-<p>
-  <strong>User:</strong>
-  <%= @blog_post.user_id %>
-</p>
+<h4>Comments</h4>
 
+<% @comment.each do |text| %>
+  <p><strong><%= text.author %> said...</strong></p>
+  <p><%= text.comment_entry %></p>
+<% end %>
+  
 <%= link_to 'Edit', edit_blog_post_path(@blog_post) %> |
 <%= link_to 'Back', blog_posts_path %>
+
+<p></p>
+<% @blog_post_id = @blog_post.id %>
+<%= link_to 'Comment on this post', new_comment_path(@comment) %>
